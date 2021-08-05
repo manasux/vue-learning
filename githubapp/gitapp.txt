@@ -1,0 +1,406 @@
+CDN links
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
+    integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g=="
+    crossorigin="anonymous" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+
+
+Alerts
+
+npm install vue-sweetalert2
+
+import { createApp } from 'vue';
+import App from './App.vue';
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
+const app = createApp(App);
+
+app.use(VueSweetalert2);
+
+app.mount('#app');
+
+axios and firebase
+
+++++++++++++++++++++++++++ Sign up +++++++++++++++++++++++++++
+
+<template>
+  <div class="container h-100">
+    <div class="row mt-5">
+      <div class="col md-6 m-auto">
+        <img
+          src="../assets/signup_image.svg"
+          alt=""
+          class="img-fluid hero-img animate__animated animate__fadeIn animate__slow"
+        />
+      </div>
+
+      <div class="col-md-6 m-auto">
+        <form  class="text-dark card card-body">
+          <p class="text-center text-primary text-header">
+            SignUp to Get Started
+          </p>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              placeholder="Password"
+              
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary">SignUp</button>
+
+          <router-link to="/signin" class="mt-2"
+            >Have an account? SignIn here</router-link
+          >
+        </form>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+
+export default {
+}
+</script>
+
+<style scoped>
+.hero-img {
+  height: 445px;
+  width: 100%;
+}
+.text-header {
+  text-transform: uppercase;
+  border-bottom: 1px solid blue;
+  font-size: 22px;
+}
+</style>
+
+++++++++++++++++++++++++++ Sign in +++++++++++++++++++++++++++
+++++++++++++++++++++++++++ Sign up +++++++++++++++++++++++++++
+
+
+<template>
+  <div class="container h-100">
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <img
+          src="../assets/signin_image.png"
+          alt=""
+          class="img-fluid hero-img animate__animated animate__fadeIn animate__slow"
+        />
+      </div>
+
+      <div class="col-md-6 m-auto">
+        <form  class="text-dark card card-body">
+          <p class="text-center text-primary text-header">Login to Continue</p>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              placeholder="Password"
+              
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            SignIn
+          </button>
+
+          <router-link to="/signup" class="mt-2"
+            >Have an account? SignUp here</router-link
+          >
+        </form>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+
+export default {
+  
+  
+  
+};
+</script>
+
+<style scoped>
+.hero-img {
+  height: 445px;
+  width: 100%;
+}
+.text-header {
+  text-transform: uppercase;
+  border-bottom: 1px solid blue;
+  font-size: 22px;
+}
+</style>
+
+
+++++++++++++++++++++++++++ Sign in +++++++++++++++++++++++++++
+++++++++++++++++++++++++++ navbar in +++++++++++++++++++++++++++
+
+
+<template>
+  <nav class="navbar navbar-dark bg-secondary">
+    <router-link class="navbar-brand" to="/">
+      <img src="../assets/logo.png" width="30" height="30" alt="" />
+    </router-link>
+    <div>
+      <div >
+        <router-link to="/signin" tag="button" class="btn btn-primary mr-2"
+          >SignIn</router-link
+        >
+        <router-link to="/signup" tag="button" class="btn btn-primary"
+          >SignUp</router-link
+        >
+      </div>
+      <div >
+        <span class="navbar-text text-white mr-2"> test@lco.dev </span>
+        <button type="button" class="btn btn-danger" >
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+</template>
+
+++++++++++++++++++++++++++ navbar in +++++++++++++++++++++++++++
+++++++++++++++++++++++++++ User Card  +++++++++++++++++++++++++++
+
+
+<template>
+  <div class="card user-card text-black border-dark">
+    <div class="background bg-secondary text-center">
+      <img
+        
+        class="img-fluid rounded-circle profile-pic border-2 border-primary bg-secondary animate__animated animate__fadeIn animate__slow"
+      />
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title text-center text-black-50">name </h5>
+      <p class="card-text">
+        bio 
+      </p>
+      <p class="card-text">
+        <span class="text-muted"> company :- </span> company 
+      </p>
+      <p class="card-text">
+        <span class="text-muted"> followers :- </span> followers 
+      </p>
+      <p class="card-text">
+        <span class="text-muted"> following :- </span> following 
+      </p>
+      <p class="card-text">
+        <span class="text-muted"> repository count :- </span>
+        public_repos 
+      </p>
+      <p class="card-text">
+        <small class="text-muted"
+          >Last updated
+          updated_at
+          ago</small
+        >
+      </p>
+      <button
+        type="button"
+        class="btn btn-primary btn-block"
+        
+      >
+        Search Another User
+      </button>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "UserCard"
+  
+};
+</script>
+
+<style scoped>
+.card {
+  margin-top: 130px;
+}
+.background {
+  height: 120px;
+}
+
+.profile-pic {
+  margin-top: -100px;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  z-index: 100;
+  border: 5px solid #fff;
+}
+
+.card-text {
+  color: #333;
+}
+</style>
+
+++++++++++++++++++++++++++ User Card  +++++++++++++++++++++++++++
+++++++++++++++++++++++++++ Repo Table Card  +++++++++++++++++++++++++++
+
+
+<template>
+  <div  class="list-group" >
+    <a
+      :href="repo.html_url"
+      target="_blank"
+      class="list-group-item list-group-item-action mb-3 animate__animated animate__pulse"
+    >
+      <div>
+        <h6>
+          {{ repo.name }}
+        </h6>
+        <p class="text-muted">
+          {{ repo.description }}
+        </p>
+        <div class="d-flex justify-content-around">
+          <span>
+            <i class="fas fa-eye" aria-hidden="true"></i>
+            {{ repo.watchers_count }}
+          </span>
+          <span>
+            <i class="fas fa-code-branch"></i> {{ repo.stargazers_count }}
+          </span>
+          <span>
+            <i class="fas fa-star" aria-hidden="true"></i>
+            {{ repo.forks_count }}
+          </span>
+          <span>
+            <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
+            {{ repo.open_issues }}
+          </span>
+        </div>
+      </div>
+    </a>
+  </div>
+</template>
+
+<script>
+
+
+export default {
+  name: "Repos",
+  
+};
+</script>
+
+<style>
+</style>
+
+++++++++++++++++++++++++++ Repo Table Card  +++++++++++++++++++++++++++
+++++++++++++++++++++++++++ Home component  +++++++++++++++++++++++++++
+
+
+<template>
+  <div class="container h-100">
+    <div class="row mt-5" v-if="!userData">
+      <div class="col-md-6">
+        <img
+          src="../assets/home.svg"
+          alt=""
+          class="img-fluid hero-img animate__animated animate__fadeIn animate__slow"
+        />
+      </div>
+      <div class="col-md-6 d-flex flex-column justify-content-center p-5">
+        <h3
+          class="text-center text-uppercase animate__animated animate__bounce"
+        >
+          Search your github profile
+        </h3>
+        <input
+          type="text"
+          placeholder="Github User Name"
+          class="form-control"
+          
+        />
+        <button type="button" class="btn btn-primary" >
+          Search
+        </button>
+      </div>
+    </div>
+
+    <div class="row mt-3" v-else>
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-8">
+        
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+
+
+export default {
+  name: "Home",
+  
+};
+</script>
+
+
+<style  scoped>
+.hero-img {
+  height: 70vh;
+  width: 100%;
+}
+button {
+  margin-top: 5px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+</style>
